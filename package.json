@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rmatambo8/update-gatsby-dependencies.git"
+    "url": "git://github.com/rmatambo8/update-gatsby-dependencies.git"
   },
   "keywords": [
     "gatsby",
