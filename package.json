@@ -1,0 +1,25 @@
+{
+  "name": "update-gatsby-dependencies",
+  "version": "1.0.0",
+  "description": "A package that will update gatsby v4 dependencies from alpha to beta",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmatambo8/update-gatsby-dependencies.git"
+  },
+  "keywords": [
+    "gatsby",
+    "cli",
+    "v4",
+    "beta"
+  ],
+  "author": "Rodney Matambo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmatambo8/update-gatsby-dependencies/issues"
+  },
+  "homepage": "https://github.com/rmatambo8/update-gatsby-dependencies#readme"
+}
