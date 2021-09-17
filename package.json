@@ -1,12 +1,9 @@
 {
   "name": "update-gatsby-dependencies",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A package that will update gatsby v4 dependencies from alpha to beta",
   "main": "index.js",
-  "bin": {
-    "update-gatsby-dependencies": "./bin/index.js",
-    "install-gatsby-dependencies": "./bin/install.js"
-  },
+  "bin": "./bin/index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
