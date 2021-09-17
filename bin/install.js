@@ -15,10 +15,19 @@ try {
 let command = process.argv.slice(2);
 const keys = Object.keys(deps);
 const alphaDeps = keys.filter((key) => /alpha-9689ff/.test(deps[key]));
-command = command.join(" ") || "npm i";
-const output = `${command} ${alphaDeps.join("@next ")}@next`;
+command = command[0] || "npm";
+const output = `${command.slice(1).join(" ") || "i"} ${alphaDeps.join(
+  "@next "
+)}@next`;
+if (/npm i @next/.test(output))
+  return console.log("must have a package to install");
 
 (async () => {
-  const { stdout } = await execa("echo", [output]);
-  console.log(stdout);
+  try {
+    const { stdout } = await execa(command, [output]);
+    console.log(stdout);
+  } catch (error) {
+    console.log("unable to install packages, because: ", error.message);
+    console.log(`${command} ${output}`);
+  }
 })();
