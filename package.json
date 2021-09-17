@@ -1,6 +1,6 @@
 {
   "name": "update-gatsby-dependencies",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A package that will update gatsby v4 dependencies from alpha to beta",
   "main": "index.js",
   "bin": "./bin/index.js",
