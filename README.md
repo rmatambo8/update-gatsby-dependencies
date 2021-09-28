@@ -36,7 +36,25 @@ you can also specify an install command but the program defaults to `npm i`
  npx update-gatsby-dependencies npm i -f
 ```
 
-### Specifying a package type
+### Specifying a package type or name to look for
+
+you can also specify a package type(or name) to look for
+
+```
+PACKAGE_TYPE='Gatsby' npx update-gatsby-dependencies
+```
+
+```
+PACKAGE_NAME='Gatsby' npx update-gatsby-dependencies
+```
+
+would look for all dependencies that have gatsby in the name and output a command like this:
+
+```
+npm i gatsby@next gatsby-awesome-pagination@next gatsby-plugin-image@next
+```
+
+### Specifying a package version to look for
 
 you can also specify a package type(or name) to look for
 
