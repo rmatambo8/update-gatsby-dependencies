@@ -12,9 +12,19 @@ go to the directory where the package.json file is and run:
 
 this will output a string you can use to update your alpha packages to beta
 
+### defaults that can be customized
+
+- searches for dependencies that have the alpha tag(alpha-9689ff) in the version
+- outputs a string that has npm i as the install command
+- each dependency will have the @next after it
+
+```
+npm i gatsby@next ... other packages each with @next
+```
+
 ### Specifying a command
 
-you can also specify an install command but the program defaults to npm i
+you can also specify an install command but the program defaults to `npm i`
 
 ```
  npx update-gatsby-dependencies yarn add
@@ -28,13 +38,17 @@ you can also specify an install command but the program defaults to npm i
 
 ### Specifying a package type
 
-you can also specify a package type to look for
+you can also specify a package type(or name) to look for
 
 ```
 PACKAGE_TYPE='Gatsby' npx update-gatsby-dependencies
 ```
 
-would look for all gatsby packages that include gatsby in their name
+```
+PACKAGE_NAME='Gatsby' npx update-gatsby-dependencies
+```
+
+would look for all dependencies that have gatsby in the name and output a command like this:
 
 ```
 npm i gatsby@next gatsby-awesome-pagination@next gatsby-plugin-image@next
