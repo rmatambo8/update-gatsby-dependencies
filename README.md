@@ -56,17 +56,13 @@ npm i gatsby@next gatsby-awesome-pagination@next gatsby-plugin-image@next
 
 ### Specifying a package version to look for
 
-you can also specify a package type(or name) to look for
+you can also specify a package version to look for
 
 ```
-PACKAGE_TYPE='Gatsby' npx update-gatsby-dependencies
+PACKAGE_VERSION='next' npx update-gatsby-dependencies
 ```
 
-```
-PACKAGE_NAME='Gatsby' npx update-gatsby-dependencies
-```
-
-would look for all dependencies that have gatsby in the name and output a command like this:
+would look for all dependencies that have next in the version number output a command like this:
 
 ```
 npm i gatsby@next gatsby-awesome-pagination@next gatsby-plugin-image@next
