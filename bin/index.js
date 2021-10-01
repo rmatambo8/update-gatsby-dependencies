@@ -1,6 +1,24 @@
 #!/usr/bin/env node
 
 const execa = require("execa");
+const {
+  updatePackageJSON,
+  findBetaPackages,
+} = require("../src/updatePackageJSON");
+var argv = require("minimist")(process.argv.slice(2));
+
+if (argv.package !== undefined) {
+  return updatePackageJSON();
+}
+
+if (argv.install !== undefined) {
+  return findBetaPackages((updatedDependencies, field) => {
+    console.log(
+      "npm i",
+      Object.keys(updatedDependencies).join("@next ") + "@next"
+    );
+  });
+}
 
 // handle config options: Load all environment variables and arguments that are needed that are needed
 const version = `@${process.env.GATSBY_VERSION_TAG || "next"}`;
