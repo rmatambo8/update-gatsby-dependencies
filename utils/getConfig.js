@@ -1,6 +1,6 @@
 const { PACKAGE_FILE } = require("./constants");
 
-var argv = require("minimist")(process.argv.slice(2));
+const argv = require("minimist")(process.argv.slice(2));
 
 const projectRoot = process.cwd();
 // find package.json file and its dependencies
