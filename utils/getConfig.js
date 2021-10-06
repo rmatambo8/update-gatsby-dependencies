@@ -15,8 +15,13 @@ try {
 }
 // handle config options: Load all environment variables and arguments that are needed that are needed
 const version = `@${
-  process.env.GATSBY_VERSION_TAG || argv.version || argv.v || `next`
+  process.env.GATSBY_VERSION_TAG ||
+  argv.version ||
+  argv.v ||
+  (argv.beta ? `next` : `latest`)
 } `;
+
+console.log(`updating based on ${version} version`);
 const isfindingPackage = Boolean(
   process.env.PACKAGE_NAME || process.env.PACKAGE_TYPE
 );
@@ -25,7 +30,7 @@ const packageNameRegex = new RegExp(
   "i"
 );
 const packageVersionRegex = new RegExp(
-  process.env.PACKAGE_VERSION || argv.version || "alpha-9689ff",
+  process.env.PACKAGE_VERSION || argv.version || argv.v || "alpha-9689ff",
   "i"
 );
 

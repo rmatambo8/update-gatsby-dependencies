@@ -1,10 +1,13 @@
 const fs = require("fs");
 const { PACKAGE_FILE } = require("./constants");
+const { version } = require("./getConfig");
 
 const argv = require("minimist")(process.argv.slice(2));
 
 const checkVersionType = (givenVersion) => {
-  return argv.beta !== undefined ? /zz-next/.test(givenVersion) : true;
+  return argv.beta !== undefined && /next/.test(version)
+    ? /zz-next/.test(givenVersion)
+    : true;
 };
 
 const makeUpdatedGatsbyDeps = (arrayOfDeps) => {

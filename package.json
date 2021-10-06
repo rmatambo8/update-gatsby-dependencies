@@ -1,11 +1,11 @@
 {
   "name": "update-gatsby-dependencies",
-  "version": "1.0.10",
+  "version": "2.0.0-beta",
   "description": "A package that will update gatsby v4 dependencies from alpha to beta",
   "main": "index.js",
   "bin": "./bin/index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./bin/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,7 +25,6 @@
   },
   "homepage": "https://github.com/rmatambo8/update-gatsby-dependencies#readme",
   "dependencies": {
-    "execa": "^5.1.1",
     "minimist": "^1.2.5",
     "npm-api": "^1.0.1"
   }

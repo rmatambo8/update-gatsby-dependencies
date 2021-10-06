@@ -6,7 +6,7 @@ const argv = require("minimist")(process.argv.slice(2));
 
 (async () => {
   try {
-    const updater = new Updater(argv.yarn);
+    const updater = new Updater(argv.yarn || argv.y);
     await updater.findDependenciesOnNPM();
     updater.createInstallCommand();
     if (argv.install !== undefined || argv.i !== undefined) {
@@ -15,6 +15,7 @@ const argv = require("minimist")(process.argv.slice(2));
       await updater.updatePackageJSON();
     } else {
       updater.outputInstallCommand();
+      console.log(`add -i or --install to install the dependencies`);
     }
   } catch (error) {
     console.log(`failed: `, error.message);
