@@ -26,7 +26,7 @@ const argv = require("minimist")(process.argv.slice(2));
       console.log(
         `\n Pro Tip: add -i or --install to install the dependencies automatically ${
           argv.beta || argv.b
-            ? null
+            ? ``
             : "or add --beta to install beta dependencies"
         }`
       );
