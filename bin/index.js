@@ -10,12 +10,22 @@ const argv = require("minimist")(process.argv.slice(2));
     await updater.findDependenciesOnNPM();
     updater.createInstallCommand();
     if (argv.install !== undefined || argv.i !== undefined) {
+      console.log(`installing dependencies...`);
       await updater.installDependencies();
     } else if (argv.package !== undefined || argv.p !== undefined) {
+      console.log(`updating your package.json file...`);
       await updater.updatePackageJSON();
     } else {
+      console.log(
+        `\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ install command ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+      );
       updater.outputInstallCommand();
-      console.log(`add -i or --install to install the dependencies`);
+      console.log(
+        `\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
+      );
+      console.log(
+        `\n Pro Tip: add -i or --install to install the dependencies automatically`
+      );
     }
   } catch (error) {
     console.log(`failed: `, error.message);

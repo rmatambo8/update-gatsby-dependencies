@@ -76,9 +76,9 @@ class Updater {
       subprocess.stdout?.pipe(process.stdout);
       subprocess.stderr?.pipe(process.stderr);
       subprocess.on("close", (code) => {
-        let message = `installation finished`;
+        let message = `\n~installation complete :)~`;
         if (code)
-          message = `it looks like there may have been some problems in the installation process, check your config and try again`;
+          message = `\n~it looks like there may have been some problems in the installation process: \n  - check your config and try again`;
         console.log(message);
       });
       await Promise.all([subprocess]);

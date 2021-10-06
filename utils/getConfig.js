@@ -21,7 +21,7 @@ const version = `@${
   (argv.beta ? `next` : `latest`)
 } `;
 
-console.log(`updating based on ${version} version`);
+console.log(`updating based on ${version}tag`);
 const isfindingPackage = Boolean(
   process.env.PACKAGE_NAME || process.env.PACKAGE_TYPE
 );
