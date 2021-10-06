@@ -24,7 +24,11 @@ const argv = require("minimist")(process.argv.slice(2));
         `\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~`
       );
       console.log(
-        `\n Pro Tip: add -i or --install to install the dependencies automatically`
+        `\n Pro Tip: add -i or --install to install the dependencies automatically ${
+          argv.beta || argv.b
+            ? null
+            : "or add --beta to install beta dependencies"
+        }`
       );
     }
   } catch (error) {
